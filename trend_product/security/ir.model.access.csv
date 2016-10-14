@@ -1,0 +1,4 @@
+id,group_id:id,name,model_id:id,perm_create,perm_unlink,perm_write,perm_read
+access_product_marca,product.group_product_variant,access.product.marca,model_product_marca,1,1,1,1
+access_product_barcode_config,product.group_product_variant,access.product.barcode.config,model_product_barcode_config,0,0,1,1
+

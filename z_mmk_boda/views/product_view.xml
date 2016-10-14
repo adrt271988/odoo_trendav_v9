@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	<!-- Categoría de productos [product] -->
+        <record id="z_mmk_boda_product_category_form_view" model="ir.ui.view">
+            <field name="name">product.category.form</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+				<!-- Add fields -->
+				<field name='type' position="after">
+            		<field name="is_rental" />
+            	</field>
+            </field>
+		</record>
+		
+        <record model="ir.ui.view" id="z_mmk_boda_event_sale_product_template_form">
+			<field name="model">product.template</field>
+			<field name="inherit_id" ref="event_sale.event_sale_product_template_form" />
+			<field name="arch" type="xml">
+				<!-- Hide fields -->
+            	<field name="event_ok" position="attributes"> <attribute name="invisible">1</attribute> </field>
+            	<label for="event_ok" position="attributes"> <attribute name="invisible">1</attribute> </label>
+			</field>
+		</record>
+                
+    </data>
+</openerp>

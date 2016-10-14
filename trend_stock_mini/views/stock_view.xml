@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="trend_view_picking_tree" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+            	<field name="location_dest_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+            </field>
+		</record>
+
+        <record id="trend_view_picking_form" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+				<field name="location_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="location_dest_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<label for="owner_id" position="attributes"> <attribute name="invisible">1</attribute> </label>
+				<field name="owner_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<page name="extra" position="attributes" > <attribute name="invisible">1</attribute> </page>
+				<button name="action_confirm" position="attributes"> <attribute name="invisible">1</attribute> </button>
+				<button name="action_cancel" position="attributes"> <attribute name="invisible">1</attribute> </button>
+				<field name="state" position="attributes"> <attribute name="statusbar_visible">draft,done</attribute> </field>
+				<field name="partner_id" position="attributes"> <attribute name="domain">[('supplier', '=', True)]</attribute> </field>
+				<field name="partner_id" position="after"> <field name="pay_term_id" /> </field>
+				<field name="move_lines" position="replace"> 
+					<field name="move_lines" options="{'reload_on_button': True}" mode="tree,kanban" context="{'address_in_id': partner_id, 'form_view_ref':'stock.view_move_picking_form', 'tree_view_ref':'stock.view_move_picking_tree', 'default_picking_type_id': picking_type_id, 'default_location_id': location_id, 'default_location_dest_id': location_dest_id}">
+						<tree editable="bottom" >
+							<field name="product_id"/>
+							<field name="name" invisible='1'/>
+							<field name="product_uom_qty"/>
+							<field name="product_uom" invisible='1'/>
+							<field name="state" invisible='1'/>
+						</tree>
+                    </field>
+				</field>
+            </field>
+		</record>
+
+        <record model="ir.ui.view" id="trend_stock_product_template_view_form_procurement_button">
+            <field name="name">product.template_procurement</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="procurement.product_template_view_form_procurement_button"/>
+            <field name="arch" type="xml">
+            	<button name="%(procurement.procurement_order_action_product_template_stat)d" position="attributes"> <attribute name="invisible">1</attribute> </button>
+            </field>
+		</record>
+		
+        <record model="ir.ui.view" id="trend_stock_product_template_form_view_procurement_button">
+            <field name="name">product.template_procurement</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
+            <field name="arch" type="xml">
+            	<button name="action_open_quants" position="attributes"> <attribute name="invisible">1</attribute> </button>
+            	<button name="%(stock.action_stock_level_forecast_report_template)d" position="attributes"> <attribute name="invisible">1</attribute> </button>
+            	<button name="action_view_orderpoints" position="attributes"> <attribute name="invisible">1</attribute> </button>
+            	<button name="action_view_routes" position="attributes"> <attribute name="invisible">1</attribute> </button>
+            	<button name="%(stock.act_make_procurement)d" position="attributes"> <attribute name="invisible">1</attribute> </button>
+            </field>
+		</record>
+
+    </data>
+</openerp>

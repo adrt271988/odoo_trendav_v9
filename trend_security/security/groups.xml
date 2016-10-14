@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+        <record id="shop_manager_group" model="res.groups">
+            <field name="name">Shop Manager</field>
+            <field name="comment"></field>
+            <field name="menu_access" eval="[
+                                                (4,ref('trend_base.menu_action_customer')),
+                                                (4,ref('trend_base.menu_action_supplier')),
+                                                (4,ref('trend_base.menu_action_product')),
+                                                (4,ref('trend_base.trend_menu_action_categories')),
+                                                (4,ref('trend_base.trend_menu_variants')),
+                                                (4,ref('trend_point_of_sale.trend_menu_product_pos_category')),
+                                                (4,ref('trend_base.menu_left_report')),
+                                                (4,ref('trend_base.trend_base_menu_board_create')),
+                                                (4,ref('trend_stock_mini.all_operations')),
+                                                (4,ref('trend_stock_mini.menu_action_inventory')),
+                                                (4,ref('pos_graph_custom.menu_trend_report_pos_order_all_config')),
+                                            ]"/>
+        </record>
+        
+        <record id="trend_pos_user_group" model="res.groups">
+            <field name="name">Ventas TPV Personalizado</field>
+            <field name="comment"></field>
+            <field name="menu_access" eval="[
+                                                (4,ref('point_of_sale.menu_point_root')),
+                                                (4,ref('point_of_sale.menu_point_ofsale')),
+                                                (4,ref('point_of_sale.menu_pos_session_all')),
+                                                (4,ref('point_of_sale.menu_pos_dashboard')),
+                                            ]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="point_of_sale.menu_pos_products">
+		  <field name="groups_id" eval="[(4,ref('point_of_sale.group_pos_user'))]"/>
+		</record>
+    </data>
+</openerp>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="ClientLine">
+        <t t-jquery='.client-line' t-operation='replace'>
+            <td style="width: 20%;"><t t-esc='partner.name' /></td>
+            <td style="width: 40%;"><t t-esc='partner.address' /></td>
+            <td style="width: 10%;"><t t-esc='partner.phone or partner.mobile or ""' /></td>
+            <td style="width: 20%;"><t t-esc='partner.boda or ""' /></td>
+            <td style="width: 10%;"><t t-esc='partner.date_boda or ""' /></td>
+        </t>
+    </t>
+    <t t-extend="ClientListScreenWidget">
+    	<t t-jquery='tr' t-operation='append'>
+    		<th>Boda</th>
+        	<th>Fecha Boda</th>
+    	</t>
+    </t>
+
+</templates>
+
+

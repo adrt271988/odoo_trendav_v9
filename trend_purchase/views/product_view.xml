@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    
+        <record id="trend_purchase_view_product_template_purchase_buttons_from" model="ir.ui.view">
+            <field name="name">product.template.purchase.button.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="purchase.view_product_template_purchase_buttons_from"/>
+            <field name="arch" type="xml">
+				<button name="%(purchase.action_purchase_line_product_tree)d" position="attributes"> <attribute name="invisible">1</attribute> </button>
+            </field>
+		</record>
+		
+        <record id="trend_purchase_view_product_supplier_inherit" model="ir.ui.view">
+            <field name="name">product.template.supplier.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="purchase.view_product_supplier_inherit"/>
+            <field name="arch" type="xml">
+                <field name="purchase_method" position="attributes"> <attribute name="invisible">1</attribute> </field>
+            </field>
+        </record>
+		
+    </data>
+</openerp>

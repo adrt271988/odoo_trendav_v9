@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    
+    <!-- CRM Lead Kanban View  -->
+        <record model="ir.ui.view" id="trend_crm_case_kanban_view_leads">
+            <field name="name">CRM - Leads Kanban</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+             	<t t-if="widget.deletable" position="after">
+             		<li><a name="action_crm_send" type="object">Send mail</a></li>
+             	</t>
+            </field>
+		</record>
+		
+    </data>
+</openerp>

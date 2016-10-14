@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+		<!-- Top menu - CUSTOMERS -->
+		<menuitem name="Configuraciones" id="menu_top_client" icon="fa-cog" 
+      		web_icon="base,static/description/settings.png" sequence="15" />
+      	
+      	<!-- CUSTOMERS -->
+		<menuitem name="Clientes/Proveedores" id="menu_left_client" sequence="1" 
+			parent='menu_top_client' />
+		<menuitem id="menu_action_customer" name="Clientes" parent="menu_left_client" 
+			action="base.action_partner_customer_form" sequence="20"/>
+        <menuitem id="menu_action_supplier" name="Proveedores" parent="menu_left_client"
+            action="base.action_partner_supplier_form" sequence="30"/>
+            
+		<!-- PRODUCTS -->
+		<menuitem name="Productos" id="menu_left_product" sequence="5" parent='menu_top_client' />
+		<menuitem name="Productos" id="menu_action_product" sequence="20"
+			action="product.product_template_action" parent="menu_left_product" />
+		<menuitem name="Categorías de Producto" id="trend_menu_action_categories" sequence="30"
+			action="product.product_category_action_form" parent="menu_left_product" groups="base.group_no_one"/>
+		<menuitem name="Variantes de productos" id="trend_menu_variants" 
+			action="product.product_normal_action_sell" parent="menu_left_product" 
+			groups="product.group_product_variant" sequence="25"/>
+
+        <!-- INFORMES -->
+        <menuitem name="Informes" id="menu_left_report" sequence="10" parent='menu_top_client' />
+        <menuitem name="Mi Tablero" id="trend_base_menu_board_create" action="board.action_board_create" sequence="10" parent='menu_left_report'/>
+
+        <!-- COMPAÑIA -->
+        <menuitem name="Compañía" id="trend_company_menu_parent" sequence="100" parent='menu_top_client' />
+        <menuitem name="Compañía" id="trend_company_menu" action="base.action_res_company_form"
+            sequence="10" parent='trend_company_menu_parent' groups="base.group_multi_company"/>
+    </data>
+</openerp>

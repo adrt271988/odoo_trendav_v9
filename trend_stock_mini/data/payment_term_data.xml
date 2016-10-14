@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--
+        	Payment term
+        -->
+        <record id="account_payment_term_deposit" model="account.payment.term">
+            <field name="name">Depósito</field>
+            <field name="note">Plazo: Depósito</field>
+        </record>
+        <record id="account_payment_term_60days" model="account.payment.term">
+            <field name="name">60 Días</field>
+            <field name="note">Plazo: 60 días</field>
+            <field name="line_ids" eval="[(0, 0, {'value': 'balance', 'value_amount': 0.0, 'sequence': 600, 'days': 60, 'option': 'day_after_invoice_date'})]"/>
+        </record>
+        <record id="account_payment_term_90days" model="account.payment.term">
+            <field name="name">90 Días</field>
+            <field name="note">Plazo: 90 días</field>
+            <field name="line_ids" eval="[(0, 0, {'value': 'balance', 'value_amount': 0.0, 'sequence': 900, 'days': 90, 'option': 'day_after_invoice_date'})]"/>
+        </record>
+        
+	</data>
+</openerp>

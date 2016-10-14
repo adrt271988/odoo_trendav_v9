@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="product_barcode_config_unique_record" model="product.barcode.config">
+            <field name="name">Configuración Código de Barras</field>
+            <field name="on_reference" eval="False"/>
+            <field name="on_default_code" eval="True"/>
+        </record>
+	</data>
+</openerp>

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	<!-- Menus - Planificación de bodas [event] -->
+		<menuitem name="Planificación de bodas" id="menu_left_event_boda"
+				parent="trend_base.menu_top_client" />
+		<menuitem name="Calendario de bodas" id="menu_action_event_boda" 
+				action="event.action_event_view" parent="menu_left_event_boda" />
+<!-- 
+        <menuitem name="Servicios alquiler" id="menu_action_registration_boda" 
+				action="event.action_registration" parent="menu_left_event_boda" />
+ -->				
+            
+	<!-- Form - Calendario de bodas [event] -->
+        <record model="ir.ui.view" id="z_mmk_boda_view_event_form">
+            <field name="name">event.event.form</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="event.view_event_form"/>
+            <field name="arch" type="xml">
+            	<!-- Hide fields -->
+            	<header position="attributes"> <attribute name="invisible">1</attribute> </header>
+            	<field name="organizer_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="user_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="event_type_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="date_tz" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="address_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="address_id" position="before"> <field name="place" /> </field>
+				<field name="company_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+
+				<!-- Update fields -->
+				<field name="address_id" position="attributes"> 
+					<attribute name="context">{'show_address': 1, 'default_company_type': 'company', 'default_type': 'contact', 'form_view_ref': 'z_mmk_boda.z_mmk_boda_view_res_partner_form'}</attribute>
+				</field>
+            </field>
+		</record>
+
+	<!-- Form - Calendario de bodas [event_sale] -->
+        <record model="ir.ui.view" id="z_mmk_boda_view_event_form_inherit_ticket">
+            <field name="name">view_event_form_inherit_ticket</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="event_sale.view_event_form_inherit_ticket"/>
+            <field name="arch" type="xml">
+            	<!-- Hide fields -->
+				<field name="seats_min" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="seats_availability" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="event_ticket_ids" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				
+				<!-- Add fields -->
+				<field name='seats_min' position="before">
+					<field name='registration_ids' nolabel='1' context="{'date_open': date_begin, 'date_closed': date_end}">
+						<tree string="Productos reservados" editable="bottom">
+	                        <field name="rental_prod_id" required='1' />
+	                        <field name="reference_prod" readonly='1' />
+	                        <field name="description_prod" required='1' />
+	                        <field name="event_id" invisible='1' />
+	                        <field name="date_open" invisible='1'/>
+	                        <field name="date_closed" invisible='1'/>
+	                        <field name="qty_availability" invisible='1'/>
+	                        <field name="qty_to_reserve" invisible='1' />
+	                        <field name="partner_id" required='0' />
+	                        <!--  attrs="{'required': [('qty_availability', '&gt;', 0)], 'readonly': [('qty_availability', '&lt;', 1)]}"  -->	
+	                        <field name="name" invisible='1'/>	
+	                        <field name="phone" invisible='1'/>	
+	                        <field name="email" invisible='1'/>	
+	                        <field name="state" invisible='1'/>	                            
+	                    </tree>
+					</field>
+            	</field>
+			</field>
+		</record>
+
+	<!-- Action - Calendario de bodas [event_sale] -->
+        <record model="ir.actions.act_window" id="event.action_event_view">
+           <field name="name">Events</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">event.event</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">calendar,kanban,tree,form</field>
+           <field name="context">{"search_default_upcoming":1}</field>
+           <field name="search_view_id" ref="event.view_event_search"/>
+           <field name="help" type="html"><p class="oe_view_nocontent_create">
+    Click to add a new event.
+</p><p>
+    Odoo helps you schedule and efficiently organize your events:
+    track subscriptions and participations, automate the confirmation emails,
+    sell tickets, etc.
+</p></field>
+        </record>
+			
+	<!-- Form - Minimun address [base] -->
+        <record model="ir.ui.view" id="z_mmk_boda_view_res_partner_form">
+            <field name="name">res.partner.form.minimun</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form string="Partner">
+                    <div class="oe_title">
+                        <h1>
+                        	<label for="name" string="Nombre de la iglesia"/>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
+                    <field name="parent_id" invisible="1"/>
+                    <field name="company_type" invisible="1"/>
+                    <field name="type" invisible="1"/>
+                    <group>
+                        <group>
+                            <label for="street" string="Dirección"/>
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="city" placeholder="City" class="o_address_city"/>
+                                <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}' on_change="onchange_state(state_id)"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+                            </div>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </form>
+			</field>
+		</record>			
+			
+    </data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--
+        	Product Automatic Sequences
+        -->
+        <record id="sequence_product_seq" model="ir.sequence">
+            <field name="name">Product automatic sequence</field>
+            <field name="code">product.automatic.sequence</field>
+            <field name="padding">9</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="use_date_range">False</field>
+        </record>
+        
+	</data>
+</openerp>

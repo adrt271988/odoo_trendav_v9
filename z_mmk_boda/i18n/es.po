@@ -1,0 +1,1674 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* z_mmk_boda
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20160311\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-03 18:51+0000\n"
+"PO-Revision-Date: 2016-04-03 18:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_cancel_state
+msgid " # No of Cancelled Registrations"
+msgstr "Nº de registros cancelados"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_confirm_state
+msgid " # No of Confirmed Registrations"
+msgstr " Nº de registros confirmados"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_draft_state
+msgid " # No of Draft Registrations"
+msgstr " Nº de registros en borrador"
+
+#. module: z_mmk_boda
+#: code:addons/event_sale/models/event.py:170
+#, python-format
+msgid " with ticket %s"
+msgstr " con ticket %s"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_kanban
+msgid "(stats)"
+msgstr "(estadísticas)"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_kanban
+msgid "<i class=\"fa fa-clock-o\"/>\n"
+"                                        <b>To</b>"
+msgstr "<i class=\"fa fa-clock-o\"/>\n"
+"<b>A</b>"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.event_event_report_template_badge
+#: model:ir.ui.view,arch_db:event.event_registration_report_template_badge
+msgid "<i>to</i>"
+msgstr "<i>a</i>"
+
+#. module: z_mmk_boda
+#: model:mail.template,body_html:event.event_reminder
+msgid "<p>Hello ${object.name},</p>\n"
+"<p>This is a reminder for ${object.event_id.name} that you registered for is confirmed and will be held from ${object.event_id.date_begin_located} to ${object.event_id.date_end_located}.\n"
+"For any further information please contact our event department.</p>\n"
+"<p>Thank you for your participation!</p>\n"
+"<p>Best regards</p>"
+msgstr "<p>Hola ${object.name},</p>\n"
+"<p>Esto es un recordatorio para el evento ${object.event_id.name}, al que se inscribió y que ha sido confirmado para ser celebrado del ${object.event_id.date_begin_located} al ${object.event_id.date_end_located}.\n"
+"Para más información, contacte por favor con nuestro departamenteo de eventos.</p>\n"
+"<p>Gracias por su participación.</p>\n"
+"<p>Saludos cordiales.</p>"
+
+#. module: z_mmk_boda
+#: model:mail.template,body_html:event.event_registration_mail_template_badge
+msgid "<p>Hello ${object.name},</p>\n"
+"<p>We confirm that your subscription to the event ${object.event_id.name} has been recorded.\n"
+"Please, Find your <b>Event Badge</b> attached with this mail.</p>\n"
+"<p>Thank you for your participation!</p>\n"
+"<p>Best regards</p>"
+msgstr "<p>Hola ${object.name},</p>\n"
+"<p>Le confirmamos que su suscripción al evento ${object.event_id.name} ha sido registrada.\n"
+"Encontrará su <b>credencial</b> adjunta con este correo.</p>\n"
+"<p>Gracias por su participación.</p>\n"
+"<p>Saludos cordiales</p>"
+
+#. module: z_mmk_boda
+#: model:mail.template,body_html:event.event_subscription
+msgid "<p>Hello ${object.name},</p>\n"
+"<p>We confirm that your subscription to the event ${object.event_id.name} has been recorded.\n"
+"You will automatically receive an email providing you more practical information (such as the schedule, the agenda...) as soon as the event is confirmed.</p>\n"
+"<p>Thank you for your participation!</p>\n"
+"<p>Best regards</p>"
+msgstr "<p>Hola ${object.name},</p>\n"
+"<p>Confirmamos que tu suscripción ${object.event_id.name} ha sido grabada.\n"
+"Usted recibirá automáticamente un email con más información práctica (como el horario, la agenda...) tan pronto como el evento sea confirmado.</p>\n"
+"<p>¡Gracias por su participación!</p>\n"
+"<p>Saludos cordiales</p>"
+
+#. module: z_mmk_boda
+#: model:mail.template,body_html:event.event_thanks
+msgid "<p>Hello ${object.name},</p>\n"
+"<p>We would like to thank you for your presence at our event ${object.event_id.name}.\n"
+"<br/><br/>\n"
+"    % if object.event_id.organizer_id and object.event_id.organizer_id.is_company:\n"
+"        <strong>The ${object.event_id.organizer_id.name} Team</strong>\n"
+"    % elif object.event_id.organizer_id:\n"
+"        <strong>${object.event_id.organizer_id.name}</strong>\n"
+"    % endif\n"
+"</p>"
+msgstr "<p>Hola ${object.name},</p>\n"
+"<p>Nos gustaría agradecerle su presencia en nuestro evento ${object.event_id.name}.\n"
+"<br/><br/>\n"
+"    % if object.event_id.organizer_id and object.event_id.organizer_id.is_company:\n"
+"        <strong>El equipo de ${object.event_id.organizer_id.name}</strong>\n"
+"    % elif object.event_id.organizer_id:\n"
+"        <strong>${object.event_id.organizer_id.name}</strong>\n"
+"    % endif\n"
+"</p>"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_form
+msgid "<span attrs=\"{'invisible': [('seats_availability', '=', 'unlimited')]}\" class=\"oe_read_only\">\n"
+"                                                to \n"
+"                                            </span>"
+msgstr "<span attrs=\"{'invisible': [('seats_availability', '=', 'unlimited')]}\" class=\"oe_read_only\">\n"
+"                                                a \n"
+"                                            </span>"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_needaction
+#: model:ir.model.fields,field_description:event.field_event_registration_message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: z_mmk_boda
+#: selection:event.mail,interval_type:0
+msgid "After each subscription"
+msgstr "Tras cada suscripción"
+
+#. module: z_mmk_boda
+#: selection:event.mail,interval_type:0
+msgid "After the event"
+msgstr "Después del evento"
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,module_event_sale:0
+msgid "All events are free"
+msgstr "Todos los eventos son gratis"
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,module_website_event_questions:0
+msgid "Allow adding extra questions on subscriptions"
+msgstr "Permitir añadir preguntas adicionales sobre suscripciones"
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,module_event_sale:0
+msgid "Allow selling tickets"
+msgstr "Permitir la venta de tickets"
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,module_website_event_track:0
+msgid "Allow tracks, agenda and dedicated menus/website per event"
+msgstr "Permite seguimientos, agenda y menús/sitios web dedicados para cada evento"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_registration_ids
+msgid "Alquiler a invitados"
+msgstr "Alquiler a invitados"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_configuration
+#: model:ir.ui.view,arch_db:event_sale.view_event_registration_editor_form
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: z_mmk_boda
+#: selection:event.registration,state:0
+#: model:ir.ui.view,arch_db:event.view_event_registration_form
+#: selection:report.event.registration,registration_state:0
+msgid "Attended"
+msgstr "Asistido"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_registration_date_closed
+msgid "Attended Date"
+msgstr "Fecha fin"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_registration_tree
+msgid "Attended the Event"
+msgstr "Asistir a la Boda"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event.model_event_registration
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_registration_id
+#: model:ir.ui.view,arch_db:event.view_event_registration_form
+#: model:ir.model,name:event_sale.model_event_registration
+msgid "Attendee"
+msgstr "Asistente"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Attendee / Contact"
+msgstr "Asistente / Contacto"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_registration_name
+#: model:ir.ui.view,arch_db:event.event_event_report_template_badge
+msgid "Attendee Name"
+msgstr "Nombre del asistente"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,name:event.act_event_registration_from_event
+#: model:ir.actions.act_window,name:event.action_registration
+#: model:ir.ui.menu,name:event.menu_action_registration
+#: model:ir.ui.view,arch_db:event.view_event_form
+msgid "Attendees"
+msgstr "Asistentes"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_auto_confirmation
+msgid "Auto Confirmation"
+msgstr "Autoconfirmación"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_seats_availability
+msgid "Available Seat"
+msgstr "sitio disponible"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_seats_available
+msgid "Available Seats"
+msgstr "Plazas disponibles"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_product_product_available_in_pos
+msgid "Available in the Point of Sale"
+msgstr "Disponible en el TPV"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_badge_back
+msgid "Badge Back"
+msgstr "Insignia atrás"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_badge_front
+msgid "Badge Front"
+msgstr "Badge Front"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_badge_innerright
+msgid "Badge Inner Right"
+msgstr "Insignia interior derecha"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_badge_innerleft
+msgid "Badge Innner Left"
+msgstr "Insignia interior izqueirda"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event_sale.view_event_registration_editor_form
+msgid "Before confirming"
+msgstr "Antes de confirmar"
+
+#. module: z_mmk_boda
+#: selection:event.mail,interval_type:0
+msgid "Before the event"
+msgstr "Antes del evento"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_configuration
+#: model:ir.ui.view,arch_db:event.view_event_confirm
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_form
+msgid "Cancel Event"
+msgstr "Cancelar Boda"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_registration_form
+#: model:ir.ui.view,arch_db:event.view_event_registration_tree
+msgid "Cancel Registration"
+msgstr "Cancelar registro"
+
+#. module: z_mmk_boda
+#: selection:event.event,state:0
+#: selection:event.registration,state:0
+#: selection:report.event.registration,event_state:0
+#: selection:report.event.registration,registration_state:0
+msgid "Cancelled"
+msgstr "Cancelada"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_event_type_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event_sale.field_product_product_to_weight
+msgid "Check if the product should be weighted using the hardware scale integration"
+msgstr "Marque si el producto debe ser pesado usando la integración hardware de la balanza"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event_sale.field_product_product_available_in_pos
+msgid "Check if you want this product to appear in the Point of Sale"
+msgstr "Marque esta casilla si quiere que este producto aparezca en el TPV"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event_sale.field_sale_order_line_event_id
+msgid "Choose an event and it will automatically create a registration for this event."
+msgstr "Escoja un evento y cree automáticamente un registro para este evento."
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event_sale.field_sale_order_line_event_ticket_id
+msgid "Choose an event ticket and it will automatically create a registration for this event ticket."
+msgstr "Escoja un ticket de evento y se creará automáticamente un registro para el mismo."
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,help:event.action_event_view
+msgid "Click to add a new event."
+msgstr "Click para añadir un nueva Boda"
+
+#. module: z_mmk_boda
+#: code:addons/event/models/event.py:205
+#, python-format
+msgid "Closing Date cannot be set before Beginning Date."
+msgstr "La fecha de cierre no puede establecerse antes de la fecha de inicio."
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_company_id
+#: model:ir.model.fields,field_description:event.field_event_registration_company_id
+#: model:ir.model.fields,field_description:event.field_report_event_registration_company_id
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Company"
+msgstr "Compañía"
+
+#. module: z_mmk_boda
+#: code:addons/event/models/event.py:401
+#, python-format
+msgid "Compose Email"
+msgstr "Componer correo electrónico"
+
+#. module: z_mmk_boda
+#: model:ir.ui.menu,name:event.menu_event_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,name:event.action_event_configuration
+msgid "Configure Event"
+msgstr "Configurar Boda"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_registration_form
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_confirm
+msgid "Confirm Anyway"
+msgstr "Confirmar de todos modos"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_form
+msgid "Confirm Event"
+msgstr "Confirmar Boda"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_registration_tree
+msgid "Confirm Registration"
+msgstr "Confirmación registro"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_auto_confirm
+msgid "Confirmation not required"
+msgstr "Confirmación no requerida"
+
+#. module: z_mmk_boda
+#: selection:event.event,state:0
+#: selection:event.registration,state:0
+#: model:ir.ui.view,arch_db:event.view_event_search
+#: selection:report.event.registration,event_state:0
+#: selection:report.event.registration,registration_state:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_kanban
+msgid "Confirmed attendees"
+msgstr "Asistentes confirmados"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_search
+msgid "Confirmed events"
+msgstr "Bodas confirmadas"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_registration_partner_id
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_country_id
+msgid "Country"
+msgstr "País"
+
+#. module: z_mmk_boda
+#: model:web.tip,description:event.event_tip_1
+msgid "Create and manage registrations for this event, send emails to attendees and print identification badges."
+msgstr "Create and manage registrations for this event, send emails to attendees and print identification badges."
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_create_uid
+#: model:ir.model.fields,field_description:event.field_event_confirm_create_uid
+#: model:ir.model.fields,field_description:event.field_event_event_create_uid
+#: model:ir.model.fields,field_description:event.field_event_mail_create_uid
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_create_uid
+#: model:ir.model.fields,field_description:event.field_event_registration_create_uid
+#: model:ir.model.fields,field_description:event.field_event_type_create_uid
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_create_uid
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_create_uid
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_create_date
+#: model:ir.model.fields,field_description:event.field_event_confirm_create_date
+#: model:ir.model.fields,field_description:event.field_event_event_create_date
+#: model:ir.model.fields,field_description:event.field_event_mail_create_date
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_create_date
+#: model:ir.model.fields,field_description:event.field_event_registration_create_date
+#: model:ir.model.fields,field_description:event.field_event_type_create_date
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_create_date
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_create_date
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_create_date
+msgid "Creation Date"
+msgstr "Fecha creación"
+
+#. module: z_mmk_boda
+#: code:addons/event/models/event.py:378
+#, python-format
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: z_mmk_boda
+#: code:addons/event/models/event.py:380
+#, python-format
+msgid "Customer Email"
+msgstr "Correo electrónico del cliente"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_event_message_last_post
+#: model:ir.model.fields,help:event.field_event_registration_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "Fecha del último mensaje publicado en el registro."
+
+#. module: z_mmk_boda
+#: selection:event.mail,interval_unit:0
+msgid "Day(s)"
+msgstr "Día(s)"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_type_default_registration_max
+msgid "Default Maximum Registration"
+msgstr "Registro máximo por defecto"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_type_default_registration_min
+msgid "Default Minimum Registration"
+msgstr "Mínimo registros por defecto"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event_sale.field_event_event_ticket_seats_max
+msgid "Define the number of available tickets. If you have too much registrations you will not be able to sell tickets anymore. Set 0 to ignore this rule set as unlimited."
+msgstr "Define el número de Tickets disponibles. Si tienen muchas inscripciones no podrás vender los tickets nunca mas. Marca 0 para ignorar esta regla ilimitada. "
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_kanban
+msgid "Delete"
+msgstr "Suprimir"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event_sale.field_product_product_event_ok
+#: model:ir.model.fields,help:event_sale.field_product_template_event_ok
+msgid "Determine if a product needs to create automatically an event registration at the confirmation of a sales order line."
+msgstr "Determina si un producto crea automáticamente una inscripción a un evento en la confirmación de la línea del pedido de venta."
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_display_name
+#: model:ir.model.fields,field_description:event.field_event_confirm_display_name
+#: model:ir.model.fields,field_description:event.field_event_event_display_name
+#: model:ir.model.fields,field_description:event.field_event_mail_display_name
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_display_name
+#: model:ir.model.fields,field_description:event.field_event_registration_display_name
+#: model:ir.model.fields,field_description:event.field_event_type_display_name
+#: model:ir.model.fields,field_description:event.field_report_event_registration_display_name
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_display_name
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_display_name
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_sequence
+msgid "Display order"
+msgstr "Orden de visualización"
+
+#. module: z_mmk_boda
+#: selection:event.event,state:0
+#: selection:report.event.registration,event_state:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: z_mmk_boda
+#: selection:report.event.registration,event_state:0
+#: selection:report.event.registration,registration_state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_editor_id
+msgid "Editor id"
+msgstr "Editor id"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_registration_email
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_email
+msgid "Email"
+msgstr "Email"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_form
+msgid "Email Schedule"
+msgstr "Email Schedule"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_group_email_scheduling
+msgid "Email Scheduling"
+msgstr "Email Scheduling"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_template_id
+msgid "Email to Send"
+msgstr "Email para enviar"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_date_end
+msgid "End Date"
+msgstr "Fecha final"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_date_end_located
+msgid "End Date Located"
+msgstr "End Date Located"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event.model_event_event
+#: model:ir.model.fields,field_description:event.field_event_mail_event_id
+#: model:ir.model.fields,field_description:event.field_event_registration_event_id
+#: model:ir.model.fields,field_description:event.field_report_event_registration_event_id
+#: model:ir.ui.view,arch_db:event.view_registration_search
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+#: model:ir.model,name:event_sale.model_event_event
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_event_id
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_event_id
+#: model:ir.model.fields,field_description:event_sale.field_sale_order_line_event_id
+msgid "Event"
+msgstr "Boda"
+
+#. module: z_mmk_boda
+#: model:ir.actions.report.xml,name:event.report_event_event_badge
+msgid "Event Badge"
+msgstr "Insignia de la Boda"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Event Beginning Date"
+msgstr "Fecha de comienzo de la Boda"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,name:event.action_event_confirm
+#: model:ir.ui.view,arch_db:event.view_event_confirm
+msgid "Event Confirmation"
+msgstr "Confirmación de la Boda"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_event_date
+msgid "Event Date"
+msgstr "Fecha de la Boda"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_registration_event_end_date
+msgid "Event End Date"
+msgstr "Fecha del final del evento"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_registration_form
+msgid "Event Information"
+msgstr "Información de la Boda"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_event_logo
+msgid "Event Logo"
+msgstr "Logo del evento"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_mail_form
+msgid "Event Mail Scheduler"
+msgstr "Event Mail Scheduler"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_mail_tree
+msgid "Event Mail Schedulers"
+msgstr "Event Mail Schedulers"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Event Month"
+msgstr "Mes de la Boda"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_name
+#: model:ir.ui.view,arch_db:event.view_event_form
+msgid "Event Name"
+msgstr "Nombre de la boda"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_calendar
+msgid "Event Organization"
+msgstr "Organización del evento"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_registration_calendar
+#: model:ir.ui.view,arch_db:event.view_event_registration_form
+#: model:ir.ui.view,arch_db:event.view_registration_search
+msgid "Event Registration"
+msgstr "Registro de boda"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,name:event_sale.action_sale_order_event_registration
+msgid "Event Registrations"
+msgstr "Registro eventos"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_user_id
+msgid "Event Responsible"
+msgstr "Responsable de la Boda"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_registration_event_begin_date
+msgid "Event Start Date"
+msgstr "Fecha inicio evento"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_event_state
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Event State"
+msgstr "Estado Boda"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_product_product_event_ok
+#: model:ir.model.fields,field_description:event_sale.field_product_template_event_ok
+#: model:product.product,name:event_sale.product_product_event
+#: model:product.template,name:event_sale.product_product_event_product_template
+msgid "Event Subscription"
+msgstr "De alquiler"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event_sale.model_event_event_ticket
+#: model:ir.model.fields,field_description:event_sale.field_event_event_event_ticket_ids
+#: model:ir.model.fields,field_description:event_sale.field_event_registration_event_ticket_id
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_event_ticket_id
+#: model:ir.model.fields,field_description:event_sale.field_sale_order_line_event_ticket_id
+msgid "Event Ticket"
+msgstr "Ticket del evento"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_product_product_event_ticket_ids
+msgid "Event Tickets"
+msgstr "Tickets del evento"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event.model_event_type
+#: model:ir.model.fields,field_description:event.field_event_type_name
+#: model:ir.model.fields,field_description:event.field_report_event_registration_event_type_id
+#: model:ir.ui.view,arch_db:event.view_event_search
+#: model:ir.ui.view,arch_db:event.view_event_type_form
+#: model:ir.ui.view,arch_db:event.view_event_type_tree
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+#: model:ir.model.fields,field_description:event_sale.field_sale_order_line_event_type_id
+msgid "Event Type"
+msgstr "Tipo de evento"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.report_event_registration_graph
+#: model:ir.ui.view,arch_db:event.report_event_registration_pivot
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Event on Registration"
+msgstr "Evento en el registro"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,name:event.action_event_view
+#: model:ir.ui.menu,name:event.event_main_menu
+#: model:ir.ui.menu,name:event.menu_event_event
+#: model:ir.ui.menu,name:event.menu_report_event_registration
+#: model:ir.ui.view,arch_db:event.view_event_configuration
+#: model:ir.ui.view,arch_db:event.view_event_form
+#: model:ir.ui.view,arch_db:event.view_event_search
+#: model:ir.ui.view,arch_db:event.view_event_tree
+msgid "Events"
+msgstr "Bodas"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,name:event.action_report_event_registration
+msgid "Events Analysis"
+msgstr "Análisis de Bodas"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,name:event.action_event_mail
+msgid "Events Mail Schedulers"
+msgstr "Events Mail Schedulers"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,name:event.action_event_type
+msgid "Events Types"
+msgstr "Tipos de evento"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_search
+msgid "Events in New state"
+msgstr "Bodas en estado 'Nuevo'"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Events which are in New state"
+msgstr "Eventos que están en estado 'Nuevo'"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Events which are in confirm state"
+msgstr "Eventos en estado 'Confirmado'"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_registration_search
+msgid "Expected"
+msgstr "Previsto"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_kanban
+msgid "Expected attendees"
+msgstr "Asistentes estimados"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Extended Filters..."
+msgstr "Filtros extendidos..."
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_form
+msgid "Finish Event"
+msgstr "Finalizar evento"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_follower_ids
+#: model:ir.model.fields,field_description:event.field_event_registration_message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_channel_ids
+#: model:ir.model.fields,field_description:event.field_event_registration_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_partner_ids
+#: model:ir.model.fields,field_description:event.field_event_registration_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_event_seats_max
+msgid "For each event you can define a maximum registration of seats(number of attendees), above this numbers the registrations are not accepted."
+msgstr "Para cada evento puedes definir un máximo de registros de asientos (número de asistentes) por encima de estos números no se aceptan las inscripciones."
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_event_seats_min
+msgid "For each event you can define a minimum reserved seats (number of attendees), if it does not reach the mentioned registrations the event can not be confirmed (keep 0 to ignore this rule)"
+msgstr "Para cada evento puede definir un número mínimo de asientos reservados (número de asistentes). Si no se alcanza ese número mínimo, el evento no se puede confirmar (fíjelo a 0 para ignorar esta regla)"
+
+#. module: z_mmk_boda
+#: model:event.type,name:event_sale.event_type
+msgid "Generic Events"
+msgstr "Eventos Genéricos."
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_search
+#: model:ir.ui.view,arch_db:event.view_registration_search
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: z_mmk_boda
+#: selection:event.mail,interval_unit:0
+msgid "Hour(s)"
+msgstr "Hora(s)"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_id
+#: model:ir.model.fields,field_description:event.field_event_confirm_id
+#: model:ir.model.fields,field_description:event.field_event_event_id
+#: model:ir.model.fields,field_description:event.field_event_mail_id
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_id
+#: model:ir.model.fields,field_description:event.field_event_registration_id
+#: model:ir.model.fields,field_description:event.field_event_type_id
+#: model:ir.model.fields,field_description:event.field_report_event_registration_id
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_id
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_id
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_event_message_unread
+#: model:ir.model.fields,help:event.field_event_registration_message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_event_message_needaction
+#: model:ir.model.fields,help:event.field_event_registration_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_event_state
+msgid "If event is created, the status is 'Draft'. If event is confirmed for the particular dates the status is set to 'Confirmed'. If the event is over, the status is set to 'Done'. If event is cancelled the status is set to 'Cancelled'."
+msgstr "Si el evento está creado, su estado inicial es 'Borrador'. Cuando el evento se confirma para unas determinadas fechas, se establece a 'Confirmado'. Si el evento está acabado, su estado es 'Realizado'. Si se cancela el mismo, entonces el estado es 'Cancelado'."
+
+#. module: z_mmk_boda
+#: selection:event.mail,interval_unit:0
+msgid "Immediately"
+msgstr "Inmediatamente"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_config_settings_module_event_sale
+msgid "Install the event_sale module"
+msgstr "Instalar el módulo event_sale"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_config_settings_module_website_event_track
+msgid "Install the module website_event_track"
+msgstr "Install the module website_event_track"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_config_settings_module_website_event_questions
+msgid "Install the website_event_questions module"
+msgstr "Install the website_event_questions module"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_interval_nbr
+msgid "Interval"
+msgstr "Intervalo"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_is_expired
+msgid "Is Expired"
+msgstr "Está expirado"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_is_follower
+#: model:ir.model.fields,field_description:event.field_event_registration_message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_type_default_registration_max
+msgid "It will select this default maximum value when you choose this event"
+msgstr "Se seleccionará este valor máximo por defecto cuando seleccione este evento"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_type_default_registration_min
+msgid "It will select this default minimum value when you choose this event"
+msgstr "Seleccionará este valor mínimo por defecto cuando escoja este evento"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_color
+msgid "Kanban Color Index"
+msgstr "Índice de colores Kanban"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_last_post
+#: model:ir.model.fields,field_description:event.field_event_registration_message_last_post
+msgid "Last Message Date"
+msgstr "Fecha del último mensaje"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings___last_update
+#: model:ir.model.fields,field_description:event.field_event_confirm___last_update
+#: model:ir.model.fields,field_description:event.field_event_event___last_update
+#: model:ir.model.fields,field_description:event.field_event_mail___last_update
+#: model:ir.model.fields,field_description:event.field_event_mail_registration___last_update
+#: model:ir.model.fields,field_description:event.field_event_registration___last_update
+#: model:ir.model.fields,field_description:event.field_event_type___last_update
+#: model:ir.model.fields,field_description:event.field_report_event_registration___last_update
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket___last_update
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor___last_update
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_write_uid
+#: model:ir.model.fields,field_description:event.field_event_confirm_write_uid
+#: model:ir.model.fields,field_description:event.field_event_event_write_uid
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_write_uid
+#: model:ir.model.fields,field_description:event.field_event_mail_write_uid
+#: model:ir.model.fields,field_description:event.field_event_registration_write_uid
+#: model:ir.model.fields,field_description:event.field_event_type_write_uid
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_write_uid
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_write_uid
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_write_date
+#: model:ir.model.fields,field_description:event.field_event_confirm_write_date
+#: model:ir.model.fields,field_description:event.field_event_event_write_date
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_write_date
+#: model:ir.model.fields,field_description:event.field_event_mail_write_date
+#: model:ir.model.fields,field_description:event.field_event_registration_write_date
+#: model:ir.model.fields,field_description:event.field_event_type_write_date
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_write_date
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_write_date
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: z_mmk_boda
+#: selection:event.event,seats_availability:0
+#: selection:event.event.ticket,seats_availability:0
+msgid "Limited"
+msgstr "Limitado"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_address_id
+msgid "Location"
+msgstr "Iglesia"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_event_mail_ids
+msgid "Mail Schedule"
+msgstr "Horario de correo"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_scheduler_id
+msgid "Mail Scheduler"
+msgstr "Mail Scheduler"
+
+#. module: z_mmk_boda
+#: model:ir.ui.menu,name:event.menu_event_type
+msgid "Mail Schedulers"
+msgstr "Mail Schedulers"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_mail_sent
+msgid "Mail Sent"
+msgstr "Correo enviado"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_mail_sent
+msgid "Mail Sent on Event"
+msgstr "Mail Sent on Event"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_mail_registration_ids
+msgid "Mail registration ids"
+msgstr "Mail registration ids"
+
+#. module: z_mmk_boda
+#: model:res.groups,name:event.group_event_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,auto_confirmation:0
+msgid "Manually confirm every subscription"
+msgstr "Confirmar manualmente cada suscripción"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_seats_max
+msgid "Max Seats"
+msgstr "Plazas máximas"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_seats_availability
+#: model:ir.model.fields,field_description:event.field_event_event_seats_available
+msgid "Maximum Attendees"
+msgstr "Máximos participantes"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_seats_max
+msgid "Maximum Attendees Number"
+msgstr "Máximo número de participantes"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_seats_max
+msgid "Maximum Available Seats"
+msgstr "Plazas máximas disponibles"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_ids
+#: model:ir.model.fields,field_description:event.field_event_registration_message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_seats_min
+msgid "Minimum Attendees"
+msgstr "Mínimos participantes"
+
+#. module: z_mmk_boda
+#: selection:event.mail,interval_unit:0
+msgid "Month(s)"
+msgstr "Mes(es)"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_search
+msgid "My Events"
+msgstr "Mis bodas"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_name
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "New"
+msgstr "Nuevo"
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,group_email_scheduling:0
+msgid "No automated emails"
+msgstr "No automated emails"
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,module_website_event_questions:0
+msgid "No extra questions on subscriptions"
+msgstr "No extra questions on subscriptions"
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,module_website_event_track:0
+msgid "No mini website per event"
+msgstr "No mini website per event"
+
+#. module: z_mmk_boda
+#: code:addons/event_sale/models/event.py:131
+#, python-format
+msgid "No more available seats for the ticket"
+msgstr "No mas sitios disponibles para tickets"
+
+#. module: z_mmk_boda
+#: code:addons/event_sale/models/event.py:153
+#, python-format
+msgid "No more available seats for this ticket"
+msgstr "No mas sitios disponibles para este ticket"
+
+#. module: z_mmk_boda
+#: code:addons/event/models/event.py:199
+#, python-format
+msgid "No more available seats."
+msgstr "No hay más plazas disponibles."
+
+#. module: z_mmk_boda
+#: code:addons/event/models/event.py:299
+#, python-format
+msgid "No more seats available for this event."
+msgstr "No more seats available for this event."
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,auto_confirmation:0
+msgid "No validation step on subscription"
+msgstr "No validation step on subscription"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_needaction_counter
+#: model:ir.model.fields,field_description:event.field_event_registration_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_nbevent
+msgid "Number of Events"
+msgstr "Nº de Bodas"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_seats_expected
+msgid "Number of Expected Attendees"
+msgstr "Número previsto de participantes"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_seats_used
+msgid "Number of Participants"
+msgstr "Número de asistentes"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_nbregistration
+msgid "Number of Registrations"
+msgstr "Número de registros"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_event_message_needaction_counter
+#: model:ir.model.fields,help:event.field_event_registration_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_event_message_unread_counter
+#: model:ir.model.fields,help:event.field_event_registration_message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,help:event.action_event_view
+msgid "Odoo helps you schedule and efficiently organize your events:\n"
+"    track subscriptions and participations, automate the confirmation emails,\n"
+"    sell tickets, etc."
+msgstr "Odoo helps you schedule and efficiently organize your events:\n"
+"    track subscriptions and participations, automate the confirmation emails,\n"
+"    sell tickets, etc."
+
+#. module: z_mmk_boda
+#: model:ir.actions.client,name:event.action_client_event_menu
+msgid "Open Event Menu"
+msgstr "Menu Bodas abiertos"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_organizer_id
+msgid "Organizer"
+msgstr "Organizador"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event_sale.view_event_registration_ticket_form
+msgid "Origin"
+msgstr "Origen"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_registration_id
+msgid "Original Registration"
+msgstr "registro original"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_registration_search
+msgid "Participant"
+msgstr "Participante"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_name_registration
+msgid "Participant / Contact Name"
+msgstr "Nombre participante / contacto"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_registration_search
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_registration_phone
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_product_product_pos_categ_id
+msgid "Point of Sale Category"
+msgstr "Categoría del TPV"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_price
+msgid "Price"
+msgstr "Precio"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_price_reduce
+msgid "Price Reduce"
+msgstr "Reducción de precio"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event_sale.model_product_product
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event_sale.model_product_template
+msgid "Product Template"
+msgstr "Plantilla producto"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_registration_origin
+msgid "Reference of the document that created the registration, for example a sale order"
+msgstr "Reference of the document that created the registration, for example a sale order"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_form
+msgid "Register with this event"
+msgstr "Registrar en este evento"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_registration_form
+#: model:ir.ui.view,arch_db:event.view_event_registration_graph
+#: model:ir.ui.view,arch_db:event.view_event_registration_pivot
+#: model:ir.ui.view,arch_db:event.view_event_registration_tree
+#: model:ir.ui.view,arch_db:event_sale.view_event_registration_editor_form
+msgid "Registration"
+msgstr "Registro"
+
+#. module: z_mmk_boda
+#: model:ir.actions.report.xml,name:event.report_event_registration_badge
+msgid "Registration Badge"
+msgstr "Registration Badge"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_registration_date_open
+msgid "Registration Date"
+msgstr "Fecha de inicio"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_registration_search
+msgid "Registration Day"
+msgstr "Día de registro"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_registration_search
+msgid "Registration ID"
+msgstr "Registration ID"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event.model_event_mail_registration
+msgid "Registration Mail Scheduler"
+msgstr "Registration Mail Scheduler"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_mail_form
+msgid "Registration Mails"
+msgstr "Registration Mails"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_registration_search
+msgid "Registration Month"
+msgstr "Mes de registro"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_report_event_registration_registration_state
+msgid "Registration State"
+msgstr "Estado de registro"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_report_event_registration_search
+msgid "Registration contact"
+msgstr "Contacto de registro"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_mail_form
+msgid "Registration mail"
+msgstr "Registration mail"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_form
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_registration_ids
+msgid "Registrations"
+msgstr "Registros"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_event_registration_ids
+msgid "Registrations to Edit"
+msgstr "Registrations to Edit"
+
+#. module: z_mmk_boda
+#: model:mail.template,subject:event.event_reminder
+msgid "Reminder of event ${object.event_id.name}"
+msgstr "Reminder of event ${object.event_id.name}"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_type_default_reply_to
+msgid "Reply To"
+msgstr "Responder A"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_reply_to
+msgid "Reply-To Email"
+msgstr "Dirección de respuesta"
+
+#. module: z_mmk_boda
+#: model:ir.ui.menu,name:event.menu_reporting_events
+msgid "Reports"
+msgstr "Informes"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_seats_reserved
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_seats_reserved
+msgid "Reserved Seats"
+msgstr "Plazas reservadas"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_user_id
+#: model:ir.ui.view,arch_db:event.view_event_search
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_sale_order_id
+msgid "Sale Order"
+msgstr "Pedido de venta"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_registration_sale_order_line_id
+#: model:ir.model.fields,field_description:event_sale.field_registration_editor_line_sale_order_line_id
+msgid "Sale Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_deadline
+msgid "Sales End"
+msgstr "Final de las ventas"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Aviso para pedido de venta"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: z_mmk_boda
+#: model:res.groups,name:event.group_email_scheduling
+msgid "Schedule Emails on Event Subscription"
+msgstr "Schedule Emails on Event Subscription"
+
+#. module: z_mmk_boda
+#: selection:event.config.settings,group_email_scheduling:0
+msgid "Schedule emails to attendees and subscribers"
+msgstr "Schedule emails to attendees and subscribers"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_scheduled_date
+msgid "Scheduled Sent Mail"
+msgstr "Scheduled Sent Mail"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_registration_scheduled_date
+msgid "Scheduled Time"
+msgstr "Tiempo programado"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_seats_used
+msgid "Seats used"
+msgstr "Asientos utilizados"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event_sale.field_product_product_event_type_id
+#: model:ir.model.fields,help:event_sale.field_product_template_event_type_id
+msgid "Select event types so when we use this product in sales order lines, it will filter events of this type only."
+msgstr "Seleccione los tipos de evento para que cuando se utilice este producto en las líneas de los pedidos de venta, se filtren eventos de este tipo únicamente."
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_registration_form
+msgid "Send by Email"
+msgstr "Enviar por correo electrónico"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_done
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_form
+msgid "Set To Draft"
+msgstr "Establecer en borrador"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_registration_form
+msgid "Set To Unconfirmed"
+msgstr "Establecer a no confirmado"
+
+#. module: z_mmk_boda
+#: model:ir.ui.menu,name:event.menu_event_global_settings
+msgid "Settings"
+msgstr "Configuración"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event_sale.view_event_registration_editor_form
+msgid "Skip"
+msgstr "Saltar"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_registration_origin
+msgid "Source Document"
+msgstr "Documento origen"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_event_registration_sale_order_id
+msgid "Source Sale Order"
+msgstr "Origen del pedido de venta"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_date_begin
+msgid "Start Date"
+msgstr "Fecha inicial"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_date_begin_located
+msgid "Start Date Located"
+msgstr "Start Date Located"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_search
+msgid "Start Month"
+msgstr "Mes de inicio"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_state
+#: model:ir.model.fields,field_description:event.field_event_registration_state
+#: model:ir.ui.view,arch_db:event.view_event_search
+#: model:ir.ui.view,arch_db:event.view_registration_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: z_mmk_boda
+#: model:ir.actions.act_window,name:event.act_register_event_partner
+msgid "Subscribe"
+msgstr "Suscribir"
+
+#. module: z_mmk_boda
+#: code:addons/event_sale/models/event.py:21
+#, python-format
+msgid "Subscription"
+msgstr "Suscripción"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_module_website_event_questions
+msgid "Subscription Survey"
+msgstr "Subscription Survey"
+
+#. module: z_mmk_boda
+#: model:mail.template,subject:event.event_thanks
+msgid "Thanks for attending ${object.event_id.name}"
+msgstr "Thanks for attending ${object.event_id.name}"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_event_reply_to
+msgid "The email address of the organizer is likely to be put here, with the effect to be in the 'Reply-To' of the mails sent automatically at event or registrations confirmation. You can also put the email address of your mail gateway if you use one."
+msgstr "La dirección de correo del organizador es la adecuada para ir aquí, con el efecto de aparecer en el campo 'Responder a' de todos los correos enviados automáticamente con la confirmación del evento o del registro. Puede poner también la dirección de su pasarela de correo si usa una."
+
+#. module: z_mmk_boda
+#: code:addons/event_sale/models/event.py:168
+#, python-format
+msgid "The registration has been created for event %(event_name)s%(ticket)s from sale order %(order)s"
+msgstr "The registration has been created for event %(event_name)s%(ticket)s from sale order %(order)s"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_mail_template_id
+msgid "This field contains the template of the mail that will be automatically sent"
+msgstr "This field contains the template of the mail that will be automatically sent"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event_sale.field_product_product_pos_categ_id
+msgid "Those categories are used to group similar products for point of sale."
+msgstr "Estas categorías se usan para agrupar productos similares para el TPV."
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event_sale.event_event_report_template_badge
+#: model:ir.ui.view,arch_db:event_sale.view_event_registration_ticket_search
+msgid "Ticket Type"
+msgstr "Tipo de vale"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_module_event_sale
+#: model:ir.ui.view,arch_db:event_sale.view_event_form_inherit_ticket
+msgid "Tickets"
+msgstr "Productos reservados"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_date_tz
+msgid "Timezone"
+msgstr "Zona horaria"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_product_product_to_weight
+msgid "To Weigh With Scale"
+msgstr "Para pesar con balanza"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_config_settings_module_website_event_track
+msgid "Tracks and Agenda"
+msgstr "Tracks and Agenda"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_product_product_event_type_id
+#: model:ir.model.fields,field_description:event_sale.field_product_template_event_type_id
+msgid "Type of Event"
+msgstr "Tipo de Evento"
+
+#. module: z_mmk_boda
+#: selection:event.event,state:0
+#: selection:event.registration,state:0
+#: model:ir.ui.view,arch_db:event.view_event_search
+msgid "Unconfirmed"
+msgstr "No confirmado"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_seats_unconfirmed
+#: model:ir.model.fields,field_description:event_sale.field_event_event_ticket_seats_unconfirmed
+msgid "Unconfirmed Seat Reservations"
+msgstr "Reservas de plazas no confirmadas"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_interval_unit
+msgid "Unit"
+msgstr "Unidad"
+
+#. module: z_mmk_boda
+#: selection:event.event,seats_availability:0
+#: selection:event.event.ticket,seats_availability:0
+msgid "Unlimited"
+msgstr "Ilimitado"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_unread
+#: model:ir.model.fields,field_description:event.field_event_registration_message_unread
+#: model:ir.ui.view,arch_db:event.view_event_search
+#: model:ir.ui.view,arch_db:event.view_registration_search
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_event_message_unread_counter
+#: model:ir.model.fields,field_description:event.field_event_registration_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leidos"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_config_settings_auto_confirmation
+msgid "Unselect this option to manually manage draft event and draft subscription"
+msgstr "Unselect this option to manually manage draft event and draft subscription"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_search
+msgid "Upcoming"
+msgstr "Próximo"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_search
+msgid "Upcoming events from today"
+msgstr "Siguientes eventos desde hoy"
+
+#. module: z_mmk_boda
+#: model:res.groups,name:event.group_event_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event.view_event_confirm
+msgid "Warning: This Event has not reached its Minimum Registration Limit. Are you sure you want to confirm it?"
+msgstr "Aviso: Este evento no ha llegado a su límite de registros mínimo. ¿Está seguro que desea confirmarlo?"
+
+#. module: z_mmk_boda
+#: selection:event.mail,interval_unit:0
+msgid "Week(s)"
+msgstr "Semana(s)"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event.field_event_mail_interval_type
+msgid "When to Run "
+msgstr "When to Run "
+
+#. module: z_mmk_boda
+#: code:addons/event/models/event.py:231
+#, python-format
+msgid "You have already set a registration for this event as 'Attended'. Please reset it to draft if you want to cancel this event."
+msgstr "Ya ha establecido su registro para este evento como 'Asistido'. Por favor, restablézcalo a borrador si quiere cancelar este evento."
+
+#. module: z_mmk_boda
+#: code:addons/event/models/event.py:356
+#, python-format
+msgid "You must wait for the starting day of the event to do this action."
+msgstr "Debe esperar al día de inicio del evento para realizar esta acción."
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,help:event.field_event_config_settings_group_email_scheduling
+msgid "You will be able to configure emails, and to schedule them to be automatically sent to the attendees on subscription and/or attendance"
+msgstr "You will be able to configure emails, and to schedule them to be automatically sent to the attendees on subscription and/or attendance"
+
+#. module: z_mmk_boda
+#: model:mail.template,subject:event.event_registration_mail_template_badge
+msgid "Your badge for ${object.event_id.name}"
+msgstr "Tu insignia para ${object.event_id.name}"
+
+#. module: z_mmk_boda
+#: model:mail.template,subject:event.event_subscription
+msgid "Your subscription at ${object.event_id.name}"
+msgstr "Your subscription at ${object.event_id.name}"
+
+#. module: z_mmk_boda
+#: model:mail.template,report_name:event.event_registration_mail_template_badge
+msgid "badge_of_${(object.event_id.name or '').replace('/','_')}"
+msgstr "badge_of_${(object.event_id.name or '').replace('/','_')}"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event.model_event_config_settings
+msgid "event.config.settings"
+msgstr "event.config.settings"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event.model_event_confirm
+msgid "event.confirm"
+msgstr "event.confirm"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event.model_event_mail
+msgid "event.mail"
+msgstr "event.mail"
+
+#. module: z_mmk_boda
+#: model:ir.model.fields,field_description:event_sale.field_sale_order_line_event_ok
+msgid "event_ok"
+msgstr "event_ok"
+
+#. module: z_mmk_boda
+#: model:ir.ui.view,arch_db:event_sale.view_event_registration_editor_form
+msgid "please give details about the registrations"
+msgstr "Por favor proporcione detalles sobre los registros"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event_sale.model_registration_editor
+msgid "registration.editor"
+msgstr "registration.editor"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event_sale.model_registration_editor_line
+msgid "registration.editor.line"
+msgstr "registration.editor.line"
+
+#. module: z_mmk_boda
+#: model:ir.model,name:event.model_report_event_registration
+msgid "report.event.registration"
+msgstr "report.event.registration"
+

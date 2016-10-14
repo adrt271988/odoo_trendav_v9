@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	<!-- Registro de invitados a bodas [event] -->
+        <record model="ir.ui.view" id="z_mmk_boda_view_event_registration_form">
+            <field name="name">event.registration.form</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event.view_event_registration_form"/>
+            <field name="arch" type="xml">
+            	<!-- Hide fields -->
+            	<field name="partner_id" position="replace" />
+            	<field name='name' position="before">
+            		<field name="partner_id" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+            	</field>
+            	
+            </field>
+		</record>
+	<!-- Registro de invitados a bodas [event_sale] -->
+        <record model="ir.ui.view" id="z_mmk_boda_view_event_registration_ticket_form">
+            <field name="name">event.registration.ticket.form</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event_sale.view_event_registration_ticket_form" />
+            <field name="arch" type="xml">
+            	<!-- Hide fields -->
+            	<field name="event_ticket_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="sale_order_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="origin" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				<field name="sale_order_line_id" position="attributes"> <attribute name="invisible">1</attribute> </field>
+				
+				<!-- Add fields -->
+				<field name='sale_order_id' position="before">
+            		<field name='rental_prod_id' />
+            		<field name='qty_availability' />
+            		<field name='qty_to_reserve' />
+            	</field>
+            </field>
+		</record>
+    
+    </data>
+</openerp>

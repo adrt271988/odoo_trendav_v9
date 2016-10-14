@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        
+		<!-- Resource: product.uom -->
+        <record id="product_uom_rental" model="product.uom">
+            <field name="name">3 días (Alquiler)</field>
+            <field ref="product.uom_categ_wtime" name="category_id"/>
+            <field name="factor" eval="3.0"/>
+            <field name="uom_type">bigger</field>
+        </record>
+	
+	</data>
+</openerp>
+	

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+		<!-- ALBARANES -->
+		<menuitem name="Cobros y pagos" id="menu_left_cash_register" sequence="50" 
+			parent='trend_base.menu_top_client' groups="account.group_account_manager"/>
+		<menuitem name="Registros de caja" id="menu_action_cash_register" sequence="5" 
+			action="account.action_view_bank_statement_tree" parent='menu_left_cash_register' />
+		<menuitem name="Cobros anticipados" id="menu_action_payments" sequence="10" 
+			action="action_account_payments_trend_pos" parent='menu_left_cash_register' />
+
+
+		<!-- CATEGORIAS PRODUCTOS TPV -->
+		<menuitem name="Categorías TPV" action="point_of_sale.product_pos_category_action" id="trend_menu_product_pos_category" 
+			parent="trend_base.menu_left_product" sequence="40" groups="point_of_sale.group_pos_user" />
+
+		<record id="trend_view_pos_session_form" model="ir.ui.view">
+            <field name="name">trend.view.pos.session.form</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+            	<field name="statement_ids" position="after">
+            		<separator string="Detalles de Pagos y Extractos Bancarios" attrs="{'invisible' : [('state', '=', 'opening_control')]}"/>
+            		<field name="statement_lines" attrs="{'invisible' : [('state', '=', 'opening_control')]}"/>
+            	</field>
+            </field>
+		</record>
+
+			
+    </data>
+</openerp>

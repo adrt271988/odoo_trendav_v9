@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+		<!-- ALBARANES -->
+		<menuitem name="Inventario" id="menu_left_inventory" sequence="5" 
+			parent='trend_base.menu_top_client' />
+		<menuitem name="Inventario" id="menu_action_inventory" sequence="5" 
+			action="stock.stock_picking_type_action" parent='menu_left_inventory' />
+        <menuitem id="all_operations" name="Todas las operaciones" 
+        	parent="menu_left_inventory" sequence="2" 
+        	action="stock.action_picking_tree_all" />
+			
+    </data>
+</openerp>
