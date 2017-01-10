@@ -38,25 +38,9 @@ class trend_pos_order(osv.osv):
     _inherit = "pos.order"
 
     def _process_order(self, cr, uid, order, context=None):
+        order_id = super(trend_pos_order, self)._process_order(cr, uid, order, context=context)
         prec_acc = self.pool.get('decimal.precision').precision_get(cr, uid, 'Account')
         session = self.pool.get('pos.session').browse(cr, uid, order['pos_session_id'], context=context)
-
-        if session.state == 'closing_control' or session.state == 'closed':
-            session_id = self._get_valid_session(cr, uid, order, context=context)
-            session = self.pool.get('pos.session').browse(cr, uid, session_id, context=context)
-            order['pos_session_id'] = session_id
-
-        order_id = self.create(cr, uid, self._order_fields(cr, uid, order, context=context),context)
-        journal_ids = set()
-        for payments in order['statement_ids']:
-            if not float_is_zero(payments[2]['amount'], precision_digits=prec_acc):
-                self.add_payment(cr, uid, order_id, self._payment_fields(cr, uid, payments[2], context=context), context=context)
-            journal_ids.add(payments[2]['journal_id'])
-
-        if session.sequence_number <= order['sequence_number']:
-            session.write({'sequence_number': order['sequence_number'] + 1})
-            session.refresh()
-
         if order['amount_paid'] != 0 and order['amount_total'] < order['amount_paid'] and not float_is_zero(order['amount_return'], precision_digits=prec_acc):
             cash_journal = session.cash_journal_id.id
             if not cash_journal:
