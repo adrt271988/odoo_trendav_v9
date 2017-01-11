@@ -25,7 +25,7 @@
             <div class="page" position="replace">
                 <div class="page">
                     <t t-foreach="docs" t-as="product">
-                        <div class="col-xs-3 mt8" style="font-size:9px;height:2cm;width:4.87cm;">
+                        <div class="col-xs-3 mt10" style="font-size:9px;height:3.8cm;width:4.87cm;">
                             <span t-field="product.name" style="word-wrap: break-word;"/><br/>
                             <span t-esc="', '.join(map(lambda x: x.name, product.attribute_value_ids))" style="word-wrap: break-word;"/>
                             <div style="margin-left:-6px;height:18px;width:100px;">
