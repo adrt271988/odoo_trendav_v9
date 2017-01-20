@@ -14,7 +14,7 @@
 Update Odoo - TrendAV, needed for all installation.
 ===================================================
 """,
-    'depends': ['base','product','account','board'],
+    'depends': ['base','product','account','board','base_vat'],
     'data': [
              'static/src/xml/base_static.xml',
              'views/base_menu.xml',

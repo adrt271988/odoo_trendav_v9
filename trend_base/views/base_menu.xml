@@ -32,5 +32,6 @@
         <menuitem name="Compañía" id="trend_company_menu_parent" sequence="100" parent='menu_top_client' />
         <menuitem name="Compañía" id="trend_company_menu" action="base.action_res_company_form"
             sequence="10" parent='trend_company_menu_parent' groups="base.group_multi_company"/>
+
     </data>
 </openerp>
