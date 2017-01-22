@@ -18,6 +18,7 @@ Quick and Easy sale process from PoS - TrendAV
     'data': [
              'views/product_pos_view.xml',
              'views/pos_menu.xml',
+             'views/templates.xml',
     ],
     'demo': [
     ],

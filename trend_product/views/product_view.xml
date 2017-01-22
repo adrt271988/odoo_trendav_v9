@@ -13,6 +13,17 @@
             </field>
 		</record>
         
+        <record id="trend_product_normal_form_view" model="ir.ui.view">
+            <field name="name">trend.product.normal.form.view</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+            	<field name="barcode" position="after">
+                    <field name="marca"/>
+                </field>
+            </field>
+		</record>
+        
         <record id="trend_product_template_tree_view" model="ir.ui.view">
             <field name="name">trend.product.template.tree.view</field>
             <field name="model">product.template</field>

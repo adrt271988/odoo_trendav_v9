@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+        <template id="trend_point_of_sale_js" name="trend_point_of_sale assests" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+               <script type="text/javascript" src="/trend_point_of_sale/static/src/js/trend_pos.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>

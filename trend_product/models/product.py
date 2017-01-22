@@ -62,7 +62,6 @@ class trend_product_product(models.Model):
         else:
             ids = self.search(cr, user, args, limit=limit, context=context)
         result = self.name_get(cr, user, ids, context=context)
-        print '*********',result
         return result
 
     def name_get(self, cr, user, ids, context=None):
@@ -142,9 +141,17 @@ class trend_product_product(models.Model):
             if product.standard_price != 0.00:
                 product.markup = product.lst_price / product.standard_price
 
+    @api.multi
+    @api.depends('product_tmpl_id.marca_id')
+    def get_marca(self):
+        for product in self:
+            if product.product_tmpl_id and product.product_tmpl_id.marca_id:
+                product.marca = product.product_tmpl_id.marca_id.name
+
     barcode = fields.Char(string='Barcode', help="International Article Number used for product identification.", 
                                 compute="get_barcode",oldname='ean13', copy=False,store=True)
     markup = fields.Float('Markup', help="Markup",compute="get_markup")
+    marca = fields.Char('Marca', help="Marca",compute="get_marca",store=True)
 
     def create(self, cr, uid, values, context=None):
         if 'product_tmpl_id' in values:
