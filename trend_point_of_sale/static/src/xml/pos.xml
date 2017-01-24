@@ -3,12 +3,25 @@
     <t t-extend="PosTicket">
         <t t-jquery=".pos-sale-ticket" t-operation="replace">
             <div class="pos-sale-ticket">
-            
-                <div class="pos-center-align"><t t-esc="moment().format('L LT')"/> <t t-esc="order.name"/></div>
-                <br />
-                <t t-esc="widget.pos.company.name"/><br />
-                Phone: <t t-esc="widget.pos.company.phone || ''"/><br />
-                Shop: <t t-esc="widget.pos.shop.name"/><br />
+                <hr/>
+                <div class="pos-center-align">
+                    <span t-esc="widget.pos.company.name || 'N/A'"/><br/>
+                    <span t-esc="widget.pos.company.vat || '-'"/><br/>
+                    <span t-esc="widget.pos.company.phone || '000'"/> <span t-esc="widget.pos.company.email || 'N/A'"/><br/>
+                    <span t-esc="widget.pos.company.website || '-'"/><br/>
+                    <p style="font-size:11px;">Para cualquier cambio es imprescindible presentar ticket de compra en un plazo
+                        de 20 días canjeable por un VALE MIMOKI del mismo importe que caduca a los 2 años</p>
+                </div>
+                <hr/>
+                <div class="pos-left-align">
+                    Factura <t t-esc="order.name"/><br/>
+                    Fecha <t t-esc="moment().format('L LT')"/><br/>
+                    Cliente: <t t-esc="order.changed.hasOwnProperty('client') &amp;&amp; order.changed.client.name || 'N/A'"/><br />
+                    R: <t t-esc="order.changed.hasOwnProperty('client') &amp;&amp; order.changed.client.vat || '-'"/><br />
+                    Atendido por: <t t-esc="widget.pos.cashier ? widget.pos.cashier.name : widget.pos.user.name"/><br />
+                    Shop: <t t-esc="widget.pos.shop.name"/>
+                </div>
+                
                 <br />
                 <t t-if="receipt.header">
                     <div style='text-align:center'>
@@ -87,12 +100,27 @@
                         <t t-esc="widget.format_currency(order.get_change())"/>
                         </td></tr>
                 </table>
+                <hr/>
+                <div class="pos-center-align">
+                    <p style="font-size:11px;">Artículos de fiesta o outlet no admiten cambios ni devoluciones</p>
+                    <span style="font-size:11px;">CONDICIONES DE ALQUILER:</span><br/>
+                    <span style="font-size:11px;">Señal no reembonsable de 20€</span><br/>
+                    <span style="font-size:11px;">Disfrutalo durante 5 días</span><br/>
+                    <span style="font-size:11px;">>Depósito de garantía 100€</span><br/>
+                    <span style="font-size:11px;">>Día extra y cambios 5€ 100€</span><br/>
+                    <span style="font-size:11px;">CONDICIONES A MEDIDA</span><br/>
+                    <span style="font-size:11px;">Señal no reembolsable 50€</span><br/>
+                    <span style="font-size:11px;">Plazo de entrega: 1 mes aprox</span><br/>
+                    <span style="font-size:11px;">IVA INCLUIDO</span><br/>
+                    <span style="font-size:11px;">GRACIAS POR SU VISITA</span>
+                </div>
                 <t t-if="receipt.footer">
                     <br />
                     <div style='text-align:center'>
                         <t t-esc="receipt.footer" />
                     </div>
                 </t>
+                
             </div>
         </t>
     </t>
