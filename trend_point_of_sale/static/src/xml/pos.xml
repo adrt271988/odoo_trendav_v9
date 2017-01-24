@@ -6,6 +6,7 @@
                 <hr/>
                 <div class="pos-center-align">
                     <span t-esc="widget.pos.company.name || 'N/A'"/><br/>
+                    <span t-esc="widget.pos.company.street || '-'"/><br/>
                     <span t-esc="widget.pos.company.vat || '-'"/><br/>
                     <span t-esc="widget.pos.company.phone || '000'"/> <span t-esc="widget.pos.company.email || 'N/A'"/><br/>
                     <span t-esc="widget.pos.company.website || '-'"/><br/>
@@ -19,7 +20,6 @@
                     Cliente: <t t-esc="order.changed.hasOwnProperty('client') &amp;&amp; order.changed.client.name || 'N/A'"/><br />
                     R: <t t-esc="order.changed.hasOwnProperty('client') &amp;&amp; order.changed.client.vat || '-'"/><br />
                     Atendido por: <t t-esc="widget.pos.cashier ? widget.pos.cashier.name : widget.pos.user.name"/><br />
-                    Shop: <t t-esc="widget.pos.shop.name"/>
                 </div>
                 
                 <br />
@@ -102,9 +102,9 @@
                 </table>
                 <hr/>
                 <div class="pos-center-align">
-                    <p style="font-size:11px;">Artículos de fiesta o outlet no admiten cambios ni devoluciones</p>
+                    <p style="font-size:11px;">Artículos de fiesta u outlet no admiten cambios ni devoluciones</p>
                     <span style="font-size:11px;">CONDICIONES DE ALQUILER:</span><br/>
-                    <span style="font-size:11px;">Señal no reembonsable de 20€</span><br/>
+                    <span style="font-size:11px;">Señal no reembolsable de 20€</span><br/>
                     <span style="font-size:11px;">Disfrutalo durante 5 días</span><br/>
                     <span style="font-size:11px;">>Depósito de garantía 100€</span><br/>
                     <span style="font-size:11px;">>Día extra y cambios 5€ 100€</span><br/>
