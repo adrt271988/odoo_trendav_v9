@@ -18,7 +18,6 @@
                     Factura <t t-esc="order.name"/><br/>
                     Fecha <t t-esc="moment().format('L LT')"/><br/>
                     Cliente: <t t-esc="order.changed.hasOwnProperty('client') &amp;&amp; order.changed.client.name || 'N/A'"/><br />
-                    R: <t t-esc="order.changed.hasOwnProperty('client') &amp;&amp; order.changed.client.vat || '-'"/><br />
                     Atendido por: <t t-esc="widget.pos.cashier ? widget.pos.cashier.name : widget.pos.user.name"/><br />
                 </div>
                 
