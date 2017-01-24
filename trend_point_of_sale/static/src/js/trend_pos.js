@@ -8,4 +8,7 @@ odoo.define('trend_point_of_sale.point_of_sale', function (require) {
     var _t = core._t;
     var PosBaseWidget = require('point_of_sale.BaseWidget');
     models.load_fields('product.product','marca');
+    models.load_fields('res.company','street');
+    models.load_fields('res.company','city');
+    models.load_fields('res.company','zip');
 });

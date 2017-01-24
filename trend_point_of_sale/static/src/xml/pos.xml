@@ -6,7 +6,7 @@
                 <hr/>
                 <div class="pos-center-align">
                     <span t-esc="widget.pos.company.name || 'N/A'"/><br/>
-                    <span t-esc="widget.pos.company.street || '-'"/><span t-esc="widget.pos.company.zip || '-'"/><br/>
+                    <span t-esc="widget.pos.company.street || '-'"/>, <span t-esc="widget.pos.company.city || '-'"/>, <span t-esc="widget.pos.company.zip || '-'"/><br/>
                     <span t-esc="widget.pos.company.vat || '-'"/><br/>
                     <span t-esc="widget.pos.company.phone || '000'"/> <span t-esc="widget.pos.company.email || 'N/A'"/><br/>
                     <span t-esc="widget.pos.company.website || '-'"/><br/>
