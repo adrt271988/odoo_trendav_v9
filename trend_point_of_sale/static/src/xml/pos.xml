@@ -39,7 +39,7 @@
                             <t t-esc="orderline.get_product().display_name"/>
                              <t t-if="orderline.get_discount() > 0">
                                 <div class="pos-disc-font">
-                                    With a <t t-esc="orderline.get_discount()"/>% discount
+                                    Con un <t t-esc="orderline.get_discount()"/>% de descuento
                                 </div>
                             </t>
                         </td>
@@ -68,7 +68,7 @@
                         </tr>
                     </t>
                     <tr>
-                        <td>Discount:</td>
+                        <td>Descuento:</td>
                         <td class="pos-right-align">
                             <t t-esc="widget.format_currency(order.get_total_discount())"/>
                         </td>
@@ -95,7 +95,7 @@
                 </table>
                 <br />
                 <table class='receipt-change'>
-                    <tr><td>Change:</td><td class="pos-right-align">
+                    <tr><td>Cambio:</td><td class="pos-right-align">
                         <t t-esc="widget.format_currency(order.get_change())"/>
                         </td></tr>
                 </table>
@@ -126,7 +126,7 @@
     
     <t t-extend="OrderWidget">
         <t t-jquery=".subentry" t-operation="replace">
-            <div class='subentry oe_hidden'>Taxes: <span class="value">0.00€</span></div>
+            <div class='subentry oe_hidden'>Impuestos: <span class="value">0.00€</span></div>
         </t>
     </t>
     
