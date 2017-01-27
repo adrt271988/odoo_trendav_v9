@@ -127,12 +127,14 @@ class trend_product_product(models.Model):
     def get_barcode(self):
         for product in self:
             config = self.env['product.barcode.config'].browse(1)
-            if config.on_default_code:
-                product.barcode = '%s%s'%(product.default_code,str(product.product_variant_count).zfill(3))
-            elif config.on_reference:
-                barcode = '%s%s'%(product.product_tmpl_id.reference,str(product.product_variant_count).zfill(3))
-                if not product.search_read([('barcode','=',barcode)],['barcode']):
-                    product.barcode = barcode
+            #Agregar validaciones de tamaño de cadena para ref o default_code
+            for i in range(product.product_variant_count):
+                if config.on_default_code:
+                    product.barcode = '%s%s'%(product.default_code,str(i).zfill(3))
+                elif config.on_reference:
+                    barcode = '%s%s'%(product.product_tmpl_id.reference,str(i).zfill(3))
+                    if not product.search_read([('barcode','=',barcode)],['barcode']):
+                        product.barcode = barcode
 
     @api.multi
     @api.depends('lst_price','standard_price')
@@ -158,7 +160,6 @@ class trend_product_product(models.Model):
             template = self.pool.get('product.template').browse(cr, uid, values['product_tmpl_id'], context = context)
             values['default_code'] = template.default_code
         return super(trend_product_product, self).create(cr, uid, values, context=context)
-
 
 
 # Product Template 
