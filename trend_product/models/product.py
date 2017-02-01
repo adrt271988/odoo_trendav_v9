@@ -136,8 +136,7 @@ class trend_product_product(models.Model):
                         if reference is False:
                             reference = product.default_code and product.default_code or ''
                         barcode = '%s%s'%(reference,str(i).zfill(3))
-                        if not product.search_read([('barcode','=',barcode)],['barcode']):
-                            product.barcode = barcode
+                        product.barcode = barcode
 
     @api.multi
     @api.depends('lst_price','standard_price')
