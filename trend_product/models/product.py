@@ -126,15 +126,18 @@ class trend_product_product(models.Model):
     @api.depends('product_tmpl_id.reference','default_code')
     def get_barcode(self):
         for product in self:
-            config = self.env['product.barcode.config'].browse(1)
-            #Agregar validaciones de tamaño de cadena para ref o default_code
-            for i in range(product.product_variant_count):
-                if config.on_default_code:
-                    product.barcode = '%s%s'%(product.default_code,str(i).zfill(3))
-                elif config.on_reference:
-                    barcode = '%s%s'%(product.product_tmpl_id.reference,str(i).zfill(3))
-                    if not product.search_read([('barcode','=',barcode)],['barcode']):
-                        product.barcode = barcode
+            if not product.barcode:
+                config = self.env['product.barcode.config'].browse(1)
+                for i in range(product.product_variant_count):
+                    if config.based_on == "default_code":
+                        product.barcode = '%s%s'%(product.default_code,str(i).zfill(3))
+                    else:
+                        reference = product.product_tmpl_id.reference
+                        if reference is False:
+                            reference = product.default_code and product.default_code or ''
+                        barcode = '%s%s'%(reference,str(i).zfill(3))
+                        if not product.search_read([('barcode','=',barcode)],['barcode']):
+                            product.barcode = barcode
 
     @api.multi
     @api.depends('lst_price','standard_price')
@@ -154,6 +157,10 @@ class trend_product_product(models.Model):
                                 compute="get_barcode",oldname='ean13', copy=False,store=True)
     markup = fields.Float('Markup', help="Markup",compute="get_markup")
     marca = fields.Char('Marca', help="Marca",compute="get_marca",store=True)
+
+    _sql_constraints = [
+        ('barcode_uniq', 'Check(1=1)', _("A barcode can only be assigned to one product !")),
+    ]
 
     def create(self, cr, uid, values, context=None):
         if 'product_tmpl_id' in values:
@@ -202,13 +209,11 @@ class trend_product_template(models.Model):
 class product_barcode_config(models.Model):
     _name="product.barcode.config"
 
-    @api.onchange('on_reference','on_default_code')
-    def onchange_check(self):
-        if self.on_reference:
-            self.on_default_code = False
-        if self.on_default_code:
-            self.on_reference = False
-
     name= fields.Char(string="Configuración Código de Barras")
-    on_reference = fields.Boolean('Con Referencia Automática', default=False, help="El código de barras se llenará con la referencia automática de las variantes")
-    on_default_code = fields.Boolean('Con Referencia Interna', default=False, help="El código de barras se llenará con la referencia interna de las variantes")
+    based_on = fields.Selection([
+            ('reference', _('Referencia Automática')), 
+            ('default_code', _('Referencia Interna')),
+        ], index=True, change_default=True, string="Basado en",
+        default='reference',
+        track_visibility='always',
+        help="Si selecciona Referencia Automática el código de barras se llenará con la referencia automática de las variantes. De lo contrario el código de barras se llenará con la referencia interna de las variantes")
