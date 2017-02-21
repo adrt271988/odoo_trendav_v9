@@ -1,6 +1,5 @@
 odoo.define('trend_point_of_sale.point_of_sale', function (require) {
 "use strict";
-    var pos_orders = require('point_of_sale.pos_orders');
     var Model = require('web.DataModel');
     var ActionManager1 = require('web.ActionManager');
     var core = require('web.core');
